@@ -1,16 +1,17 @@
 class WordFreq{ 
 
-String word; 
-int frequency; 
+    String word; 
+    int frequency; 
+    
+    WordFreq(String word, int frequency){
+      this.word= word; 
+      this.frequency = frequency; 
+    }
 
-WordFreq(String word, int frequency){
-  this.word= word; 
-  this.frequency = frequency; 
-}
-@Override 
-public String toString(){
- return word +  " -  " + frequency ; 
-  } 
+    @Override 
+    public String toString(){
+       return word +  " -  " + frequency ; 
+    } 
 
 } 
 
@@ -31,9 +32,9 @@ public class WordFreqMaxHeap{
           new WordFreq("terrible", 160),
           new WordFreq("inconvenient", 900),
           new WordFreq("difficult to use", 100),
-          new WordFreq("easy to use", 140)),
+          new WordFreq("easy to use", 140),
           new WordFreq("would recommend to friends", 800),
-          new WordFreq("visit the store", 700),
+          new WordFreq("visit the store", 700)
           
           };
           //call buildBottomUpMaxHeap with this array
@@ -81,13 +82,17 @@ if(  (leftIndx < n )  &&( arr[leftIndx].frequency > arr[maxIndx].frequency  ) ) 
       } 
 //swap the bigger element with its parent
     if ( maxIndx != i ){ 
+
       WordFreq temp =  arr[i] ; 
       arr [ i ] = arr[ maxIndx ] ; 
       arr [ maxIndx ] = temp; 
+
+ maxHeapify( arr ,  n , maxIndx );
+
+
       }
 
-    maxHeapify( arr ,  n , maxIndx )
-
+   
    } 
 
     
