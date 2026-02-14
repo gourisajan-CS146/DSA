@@ -17,7 +17,7 @@ public class WordFreqMaxHeap{
       static int heapSize; 
       
       public static void main ( String [] args){ 
-      
+        //create array of WordFreq objects
           WordFreq[] arr = { 
           
           new WordFreq("happy",400),
@@ -32,39 +32,47 @@ public class WordFreqMaxHeap{
           new WordFreq("visit the store", 700),
           
           };
-      
+          //call buildBottomUpMaxHeap with this array
         } 
 
     public static void buildBottomUpMaxHeap ( WordFreq[] arr ){
 
-        int n = arr.length;
+        int n = arr.length; //calculate length of array
+        //take  only non leaf nodes .non leaf nodes starts with n/2-1 index
+
         for ( int i = (n/2)-1 ; i >=0 ; i--){
-         
+          //call maxHeapify for each non leaf node passing index and the WordFreq array
+           maxHeapify( arr ,  n ,  i);
       
         }
     
 
     } 
 
+/**
+This method will do heapify for one node 
+**/
     public static void maxHeapify(WordFreq[] arr , int n , int i){
        int maxIndx = i; 
        int leftIndx  =  2 * i + 1 ;
        int rightIndx = 2 * i + 2; 
 
-      if(  (leftIndx < n )  &&( arr[leftIndx].frequency > arr[maxIndx].frequency  ) ) { 
+//check if left element is greater
+if(  (leftIndx < n )  &&( arr[leftIndx].frequency > arr[maxIndx].frequency  ) ) { 
            maxIndx = leftIndx;
       }
-
+//checking if right element is greater
     if( ( rightIndx < n) && ( arr[rightIndx].frequency > arr[maxIndx].frequency ) ) {
           maxIndx = rightIndx;
       } 
-
+//swap the bigger element with its parent
     if ( maxIndx != i ){ 
       WordFreq temp =  arr[i] ; 
       arr [ i ] = arr[ maxIndx ] ; 
       arr [ maxIndx ] = temp; 
-}
-        
+      }
+
+    maxHeapify( arr ,  n , maxIndx )
 
    } 
 
