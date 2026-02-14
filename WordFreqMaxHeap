@@ -6,7 +6,11 @@ int frequency;
 WordFreq(String word, int frequency){
   this.word= word; 
   this.frequency = frequency; 
-} 
+}
+@Override 
+public String toString(){
+ return word +  " -  " + frequency ; 
+  } 
 
 } 
 
