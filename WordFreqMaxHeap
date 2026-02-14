@@ -38,15 +38,14 @@ public class WordFreqMaxHeap{
           
           };
           //call buildBottomUpMaxHeap with this array
-            buildBottomUpMaxHeap(arr);
+           buildBottomUpMaxHeap(arr);
 
-             System.out.println( "Array after Bottom Up Max Heapify: " ); 
-              for ( WordFreq elem : arr) { 
+           System.out.println( "Array after Bottom Up Max Heapify: " ); 
+           for ( WordFreq elem : arr) { 
+                System.out.println(elem) ;   
+           }
 
-                   System.out.println(elem) ;   
-               }
-
-        } 
+        } //main
 
 
 
@@ -62,7 +61,7 @@ public class WordFreqMaxHeap{
         }
     
 
-    } 
+    } //buildBottomUpMaxHeap
 
 /**
 This method will do heapify for one node 
@@ -72,35 +71,31 @@ This method will do heapify for one node
        int leftIndx  =  2 * i + 1 ;
        int rightIndx = 2 * i + 2; 
 
-//check if left element is greater
-if(  (leftIndx < n )  &&( arr[leftIndx].frequency > arr[maxIndx].frequency  ) ) { 
-           maxIndx = leftIndx;
-      }
-//checking if right element is greater
-    if( ( rightIndx < n) && ( arr[rightIndx].frequency > arr[maxIndx].frequency ) ) {
-          maxIndx = rightIndx;
-      } 
-//swap the bigger element with its parent
-    if ( maxIndx != i ){ 
+        //check if left element is greater
+        if(  (leftIndx < n )  &&( arr[leftIndx].frequency > arr[maxIndx].frequency  ) ) { 
+                   maxIndx = leftIndx;
+         }
+        //checking if right element is greater
+        if( ( rightIndx < n) && ( arr[rightIndx].frequency > arr[maxIndx].frequency ) ) {
+                  maxIndx = rightIndx;
+          } 
+        //swap the bigger element with its parent
+           if ( maxIndx != i ){ 
+        
+              WordFreq temp =  arr[i] ; 
+              arr [ i ] = arr[ maxIndx ] ; 
+              arr [ maxIndx ] = temp; 
+        
+             maxHeapify( arr ,  n , maxIndx );
 
-      WordFreq temp =  arr[i] ; 
-      arr [ i ] = arr[ maxIndx ] ; 
-      arr [ maxIndx ] = temp; 
 
- maxHeapify( arr ,  n , maxIndx );
+         }
 
-
-      }
-
-   
-   } 
-
-    
-      
+   }    //method
      
   
           
-    }
+ 
 
 
- } 
+ } //WordFreqMaxHeap
