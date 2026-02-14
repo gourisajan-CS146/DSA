@@ -13,26 +13,51 @@ WordFreq(String word, int frequency){
 
 public class WordFreqMaxHeap{ 
 
-// main method to test 
-static int heapSize; 
+      // main method to test 
+      static int heapSize; 
+      
+      public static void main ( String [] args){ 
+      
+          WordFreq[] arr = { 
+          
+          new WordFreq("happy",400),
+          new WordFreq("satisfied",100),
+          new WordFreq("neutral",300),
+          new WordFreq("would buy again", 200),
+          new WordFreq("terrible", 160),
+          new WordFreq("inconvenient", 900),
+          new WordFreq("difficult to use", 100),
+          new WordFreq("easy to use", 140)),
+          new WordFreq("would recommend to friends", 800),
+          new WordFreq("visit the store", 700),
+          
+          };
+      
+        } 
 
-public static void main ( String [] args){ 
+    public static void buildBottomUpMaxHeap ( WordFreq[] arr ){
 
-WordFreq[]arr = { 
+        int n = arr.length;
+        for ( int i = (n/2)-1 ; i >=0 ; i--){
+         
+      
+        }
+    
 
-new WordFreq("happy",400),
-new WordFreq("satisfied",100),
-new WordFreq("neutral",300),
-new WordFreq("would buy again", 200),
-new WordFreq("terrible", 160),
-new WordFreq("inconvenient", 900),
-new WordFreq("difficult to use", 100),
-new WordFreq("easy to use", 140)),
-new WordFreq("would recommend to friends", 800),
-new WordFreq("visit the store", 700),
+    } 
 
-};
+    public static void maxHeapify(WordFreq[] arr , int n , int i){
+            int maxIndx = i; 
+            int leftIndx  =  2 * i + 1 ;
+            int rightIndx = 2 * i + 2; 
+
+      if(  (leftIndx < n )  &&( arr[leftIndx].frequency > arr[ maxIndx ].frequency  ) ) { 
+           maxIndx = leftIndx;
+      }
+
+  
+          
+    }
 
 
-
-} 
+ } 
