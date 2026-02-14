@@ -37,7 +37,17 @@ public class WordFreqMaxHeap{
           
           };
           //call buildBottomUpMaxHeap with this array
+            buildBottomUpMaxHeap(arr);
+
+             System.out.println( "Array after Bottom Up Max Heapify: " ); 
+              for ( WordFreq elem : arr) { 
+
+                   System.out.println(elem) ;   
+               }
+
         } 
+
+
 
     public static void buildBottomUpMaxHeap ( WordFreq[] arr ){
 
