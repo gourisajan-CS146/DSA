@@ -1,0 +1,14 @@
+public class SinglyLinkedList { 
+
+Node head; 
+
+public SinglyLinkedList(){ 
+ head = null;
+ }
+
+public Node listInsert(Node head, Node x){
+
+} 
+
+
+} 
