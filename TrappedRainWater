@@ -4,14 +4,14 @@ public static void main(String args[]){
     int[] elevationMap = {1, 2, 1, 4, 1, 2, 1, 5,0,0 ,2, 1, 5};
     int len = elevationMap.length;
 
-    //store tall wall to left of index
+    //store tallest wall to left of index
     int[] maxLeftHeight = new int[len];
-   //store tall wall to right of index
+   //store tallest wall to right of index
     int[] maxRightHeight = new int[len];
 
     //no left side so tallest is itself
     maxLeftHeight[0]=elevationMap[0];
-    for( int i=1;i<len;i++){// move from 1 till length
+    for( int i=1;i<len;i++){// move from 1st index  onwards
          maxLeftHeight[i]= Math.max(maxLeftHeight[i-1],elevationMap[i]);//max of prvious max left heoight and current wall
     }
     
@@ -30,7 +30,7 @@ public static void main(String args[]){
     totalWaterFilled  =totalWaterFilled+waterAtEachLevel;
     }
     
-    System.out.println("Amount of trapped rainwater here is "+totalWaterFilled);
+    System.out.println("Amount of trapped rainwater here is "+totalWaterFilled+ " units ");
 
 }
 
