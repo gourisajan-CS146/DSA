@@ -6,13 +6,68 @@ public SinglyLinkedList(){
  head = null;
  }
 
+//Inserts node x at the head and returns the new head 
+
 public Node listInsert(Node head, Node x){
+x.next = head; 
+head = x;
+return x; 
+} 
 
+//Returns the node whose key matches key, or null if not found.
+
+public Node listSearch(Node head, int key){
+   Node current = head; 
+   while( current != null && current.key != key ) { 
+   
+   current = current.next; 
+   } 
+   return current;
 
 } 
 
+//Deletes node x from the list and returns the (possibly updated) head.
+public Node listDelete(Node head, Node x){ 
 
+   //case 1 if linked list is empty
+   if ( head == null || x == null ) { 
+      return head;  
+   }
+  //case 2: delete x is a head node 
+  if ( x  == head ){
+    return head.next; 
+  
+  } 
+//case 3 x node is in middle
+ Node current = head;
+ while ( current.next != null && current.next != x) { 
+    current = current.next ; 
+ }
+if ( current.next == x ) { 
+  current.next = x.next;
+   return head;
+}
+}//list delete
+
+public void printList(Node head ){
+
+Node current  = head ; 
+
+while ( current != null ) { 
+ System.out.print( current.key + " - " );
+
+   } 
+
+System.out.println();
 } 
+
+public 
+
+} //end of class
+
+
+
+
 
 class Node{
 
