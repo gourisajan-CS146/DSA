@@ -9,7 +9,7 @@ public static void main(String args[]){
    //store tall wall to right of index
     int[] maxRightHeight = new int[len];
 
-//no left side so tallest is itself
+    //no left side so tallest is itself
     maxLeftHeight[0]=elevationMap[0];
     for( int i=1;i<len;i++){// move from 1 till length
          maxLeftHeight[i]= Math.max(maxLeftHeight[i-1],elevationMap[i]);//max of prvious max left heoight and current wall
