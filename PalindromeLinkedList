@@ -89,7 +89,7 @@ Node head2 = null;
 head2=list.listInsert(head2, new Node(10));
 head2=list.listInsert(head2, new Node(20));
 head2=list.listInsert(head2, new Node(20)); 
-head2=list.listInsert(head1, new Node(10));
+head2=list.listInsert(head2, new Node(10));
 
 
 System.out.println(" Case 2 : ");
