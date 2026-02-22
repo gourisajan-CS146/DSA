@@ -1,111 +1,105 @@
 public class SinglyLinkedList { 
 
-Node head; 
-
-public SinglyLinkedList(){ 
- head = null;
- }
-
-//Inserts node x at the head and returns the new head 
-
-public Node listInsert(Node head, Node x){
-x.next = head; 
-head = x;
-return x; 
-} 
-
-//Returns the node whose key matches key, or null if not found.
-
-public Node listSearch(Node head, int key){
-   Node current = head; 
-   while( current != null && current.key != key ) { 
+   Node head; 
    
-   current = current.next; 
+   public SinglyLinkedList(){ 
+    head = null;
+    }
+   
+   //Inserts node x at the head and returns the new head 
+   
+   public Node listInsert(Node head, Node x){
+     x.next = head; 
+     head = x;
+     return x; 
    } 
-   return current;
-
-} 
-
-//Deletes node x from the list and returns the (possibly updated) head.
-public Node listDelete(Node head, Node x){ 
-
-   //case 1 if linked list is empty
-   if ( head == null || x == null ) { 
-      return head;  
-   }
-  //case 2: delete x is a head node 
-  if ( x  == head ){
-    return head.next; 
-  
-  } 
-//case 3 x node is in middle
- Node current = head;
- while ( current.next != null && current.next != x) { 
-    current = current.next ; 
- }
-if ( current.next == x ) { 
-  current.next = x.next;
-  
-}
-return head;
-}//list delete
-
-public void printList(Node head ){
-
-Node current  = head ; 
-
-while ( current != null ) { 
- System.out.print( current.key + "   " );
-  current=current.next;
-} 
-
-System.out.println();
-} 
-
-public Node populate (Node head ){ 
-Node node1 = new Node(10);
-Node node2 = new Node(30);
-Node node3 = new Node(60);
-
-head = listInsert(head,node1);
-head = listInsert(head,node2);
-head = listInsert(head,node3);
-
-return head; 
-
-}  
-
-public static void main (String [] args ){ 
-
-SinglyLinkedList list = new SinglyLinkedList(); 
-
-Node head = null; 
-
-head = list.populate(head);
-
-System.out.println("The list :  "  );
-
-list.printList(head);
-
-//Search for a node and print whether it was found
-
-Node nodeFound =  list.listSearch( head, 30);
-
-if ( nodeFound != null ){ 
-   System.out.println( " Node 30 is found " ) ;
- } 
-else { 
-    System.out.println( " 30 is not found " ) ; 
-} 
-
-//Delete one of the nodes (by passing the node reference)
-head =list.listDelete( head, nodeFound);
-
-//Print the list again to show the change
-System.out.println("The new list  after deletion :  " );
-list.printList(head);
-
-} //end of main
+   
+   //Returns the node whose key matches key, or null if not found.
+   
+   public Node listSearch(Node head, int key){
+      Node current = head; 
+      while( current != null && current.key != key ) { 
+         current = current.next; 
+      } 
+      return current;
+   } 
+   
+   //Deletes node x from the list and returns the (possibly updated) head.
+   public Node listDelete(Node head, Node x){ 
+       //case 1 if linked list is empty
+        if ( head == null || x == null ) { 
+           return head;  
+        }
+       //case 2: delete x is a head node 
+       if ( x  == head ){
+         return head.next; 
+       
+       } 
+     //case 3 x node is in middle
+      Node current = head;
+      while ( current.next != null && current.next != x) { 
+         current = current.next ; 
+      }
+     if ( current.next == x ) { 
+       current.next = x.next;
+       
+     }
+     return head;
+   }//list delete
+   
+   public void printList(Node head ){
+      Node current  = head ;  
+      while ( current != null ) { 
+       System.out.print( current.key + "   " );
+        current=current.next;
+      }    
+      System.out.println();
+   } 
+   
+   public Node populate (Node head ){ 
+      Node node1 = new Node(10);
+      Node node2 = new Node(30);
+      Node node3 = new Node(60);
+      
+      head = listInsert(head,node1);
+      head = listInsert(head,node2);
+      head = listInsert(head,node3);
+      
+      return head; 
+   
+   }  
+   
+   public static void main (String [] args ){ 
+   
+      SinglyLinkedList list = new SinglyLinkedList(); 
+      
+      Node head = null; 
+      
+      head = list.populate(head);
+      
+      System.out.println("The list :  "  );
+      
+      list.printList(head);
+      
+      //Search for a node and print whether it was found
+      
+      Node nodeFound =  list.listSearch( head, 30);
+      
+      if ( nodeFound != null ){ 
+         System.out.println( " Node 30 is found " ) ;
+       } 
+      else { 
+          System.out.println( " 30 is not found " ) ; 
+      } 
+      
+      //Delete one of the nodes (by passing the node reference)
+      head =list.listDelete( head, nodeFound);
+      
+      //Print the list again to show the change
+      System.out.println("The new list  after deletion :  " );
+      list.printList(head);
+   
+   } //end of main
 }
 
 
@@ -114,13 +108,13 @@ list.printList(head);
 
 class Node{
 
-int key; 
-Node next; 
-
-public Node(int key) { 
-this.key = key; 
-this.next = null;
-} 
+  int key; 
+  Node next; 
+  
+  public Node(int key) { 
+    this.key = key; 
+    this.next = null;
+  } 
 
 
 }
