@@ -61,7 +61,43 @@ while ( current != null ) {
 System.out.println();
 } 
 
-public 
+public Node populate (Node head ){ 
+Node node1 = new Node(10);
+Node node2 = new Node(30);
+Node node3 = new Node(60);
+
+head = listInsert(head,node1);
+head = listInsert(head,node2);
+head = listInsert(head,node3);
+
+return head; 
+
+}  
+
+public static void main (String [] args ){ 
+
+SinglyLinkedList list = new SinglyLinkedList(); 
+
+Node head = null; 
+
+head = list.populate(head);
+
+System.out.println("The list :  "  + list.printList(head);
+
+
+
+//Search for a node and print whether it was found
+
+Node nodeFound =  list.listSearch( head, 30);
+
+if ( nodeFound != null { 
+   System.out.println( " Node 30 is found " ) ;
+ } 
+else { 
+    System.out.println( " 30 is not found " ) ; 
+} 
+
+//Delete one of the nodes (by passing the node reference)
 
 } //end of class
 
