@@ -30,7 +30,7 @@ public static void main(String args[]){
     totalWaterFilled  =totalWaterFilled+waterAtEachLevel;
     }
     
-    System.out.println("Amount of trapped rainwater here is "+totalWaterFilled+ " units ");
+    System.out.println("The maximum amount of water that can be trapped after raining is : "+totalWaterFilled+ " units ");
 
 }
 
