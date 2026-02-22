@@ -76,7 +76,7 @@ head1=list.listInsert(head1, new Node(1));
 System.out.println(" Case 1 : ");
 list.printList(head1);
 
-Boolean isPalindrome = list.checkPalindrome(head1); 
+boolean isPalindrome = list.checkPalindrome(head1); 
 
 System.out.println("For this list isPlaindrome returend "+isPalindrome);
 
@@ -95,7 +95,7 @@ head2=list.listInsert(head2, new Node(10));
 System.out.println(" Case 2 : ");
 list.printList(head2);
 
-Boolean isPalindrome2 = list.checkPalindrome(head2); 
+boolean isPalindrome2 = list.checkPalindrome(head2); 
 
 System.out.println("For this list isPlaindrome returend "+isPalindrome2);
 
@@ -114,7 +114,7 @@ head3=list.listInsert(head3, new Node(17));
 System.out.println(" Case 3 : ");
 list.printList(head3);
 
-Boolean isPalindrome3 = list.checkPalindrome(head3); 
+boolean isPalindrome3 = list.checkPalindrome(head3); 
 
 System.out.println("For this list isPlaindrome returend "+isPalindrome3);
 
