@@ -55,7 +55,7 @@ public void printList(Node head ){
 Node current  = head ; 
 
 while ( current != null ) { 
- System.out.print( current.key + " - " );
+ System.out.print( current.key + "   " );
   current=current.next;
 } 
 
