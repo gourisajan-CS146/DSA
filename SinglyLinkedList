@@ -105,7 +105,8 @@ head =list.listDelete( head, nodeFound);
 System.out.println("The new list  after deletion :  " );
 list.printList(head);
 
-} //end of class
+} //end of main
+}
 
 
 
