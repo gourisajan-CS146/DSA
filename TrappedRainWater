@@ -22,7 +22,7 @@ maxRightHeight[i]= Math.max(maxRightHeight[i+1],elevationMap[i]);
 int totalWaterFilled = 0;
 for(int i =0;i<n;i++){
  int waterAtEachLevel = Math.min(maxLeftHeight[i],maxRightHeight[i])-elevationMap[i];
-System.out.print("Water at level "+1 " is :"+waterAtEachLevel);
+System.out.print("Water at level "+i+ " is :"+waterAtEachLevel);
 totalWaterFilled  =totalWaterFilled+waterAtEachLevel;
 }
 
