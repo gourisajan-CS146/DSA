@@ -45,8 +45,9 @@ public Node listDelete(Node head, Node x){
  }
 if ( current.next == x ) { 
   current.next = x.next;
-   return head;
+  
 }
+return head;
 }//list delete
 
 public void printList(Node head ){
@@ -55,8 +56,8 @@ Node current  = head ;
 
 while ( current != null ) { 
  System.out.print( current.key + " - " );
-
-   } 
+  current=current.next;
+} 
 
 System.out.println();
 } 
@@ -82,15 +83,15 @@ Node head = null;
 
 head = list.populate(head);
 
-System.out.println("The list :  "  + list.printList(head);
+System.out.println("The list :  "  );
 
-
+list.printList(head);
 
 //Search for a node and print whether it was found
 
 Node nodeFound =  list.listSearch( head, 30);
 
-if ( nodeFound != null { 
+if ( nodeFound != null ){ 
    System.out.println( " Node 30 is found " ) ;
  } 
 else { 
@@ -98,10 +99,11 @@ else {
 } 
 
 //Delete one of the nodes (by passing the node reference)
-head =list.listDelete( head, new Node(30));
+head =list.listDelete( head, nodeFound);
 
 //Print the list again to show the change
-System.out.println("The new list  after deletion :  "  + list.printList(head);
+System.out.println("The new list  after deletion :  " );
+list.printList(head);
 
 } //end of class
 
