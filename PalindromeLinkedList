@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 public class PalindromeLinkedList { 
 
 Node head; 
@@ -33,7 +33,7 @@ System.out.println();
 
 
 public boolean checkPalindrome(Node head){
-
+//create an arraylist holding all values from the linked list
 ArrayList<Integer> data = new ArrayList<Integer> (); 
 
 Node current = head; 
@@ -41,12 +41,28 @@ while ( current != null) {
 data.add(current.key); 
 current = current.next; 
 } 
+int i = 0 ; 
+int j = data.size()-1;
+
+while( i < j ) { 
+if (!data.get(i).equals(data.get(j))){ 
+   return false; 
+
+} 
+i++;
+j--;
+
+} 
+
+return true; 
+
+
 } 
 
 
 public static void main (String [] args ){ 
 
-SinglyLinkedList list = new SinglyLinkedList(); 
+PalindromeLinkedList list = new PalindromeLinkedList(); 
 
 Node head1 = null; 
 
@@ -60,29 +76,54 @@ head1=list.listInsert(head1, new Node(1));
 System.out.println(" Case 1 : ");
 list.printList(head1);
 
+Boolean isPalindrome = list.checkPalindrome(head1); 
+
+System.out.println("For this list isPlaindrome returend "+isPalindrome);
 
 
-System.out.println("The list :  "  );
 
-list.printList(head);
+//CASE 2
 
-//Search for a node and print whether it was found
+// create and checking 10 → 20 → 20 → 10 → Palindrome
+Node head2 = null; 
+head2=list.listInsert(head2, new Node(10));
+head2=list.listInsert(head2, new Node(20));
+head2=list.listInsert(head2, new Node(20)); 
+head2=list.listInsert(head1, new Node(10));
 
-Node nodeFound =  list.listSearch( head, 30);
 
-if ( nodeFound != null ){ 
-   System.out.println( " Node 30 is found " ) ;
- } 
-else { 
-    System.out.println( " 30 is not found " ) ; 
-} 
+System.out.println(" Case 2 : ");
+list.printList(head2);
 
-//Delete one of the nodes (by passing the node reference)
-head =list.listDelete( head, nodeFound);
+Boolean isPalindrome2 = list.checkPalindrome(head2); 
 
-//Print the list again to show the change
-System.out.println("The new list  after deletion :  " );
-list.printList(head);
+System.out.println("For this list isPlaindrome returend "+isPalindrome2);
+
+
+//CASE 3 
+
+//create and checking 5 → 10 → 17 → Not a palindrome
+
+Node head3 = null; 
+head3=list.listInsert(head3, new Node(5));
+head3=list.listInsert(head3, new Node(10));
+head3=list.listInsert(head3, new Node(17)); 
+
+
+
+System.out.println(" Case 3 : ");
+list.printList(head3);
+
+Boolean isPalindrome3 = list.checkPalindrome(head3); 
+
+System.out.println("For this list isPlaindrome returend "+isPalindrome3);
+
+
+}
+
+
+
+
 
 } //end of class
 
