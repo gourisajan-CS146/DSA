@@ -13,7 +13,7 @@ maxLeftHeight[i]= Math.max(maxLeftHeight[i-1],elevationMap[i]);
 }
 
 
-maxRightHeight[0]=elevationMap[n-1];
+maxRightHeight[n-1]=elevationMap[n-1];
 for( int i=n-2;i>=0;i--){
 maxRightHeight[i]= Math.max(maxRightHeight[i+1],elevationMap[i]);
 }
