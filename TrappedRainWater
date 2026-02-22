@@ -8,6 +8,18 @@ int[] maxLeftHeight = new int[len];
 int[] maxRightHeight = new int[len];
 
 maxLeftHeight[0]=elevationMap[0];
+for( int i=1;i<n;i++){
+maxLeftHeight[i]= Math.max(maxLeftHeight[i-1],elevationMap[i]);
+}
+
+
+maxRightHeight[0]=elevationMap[n-1];
+for( int i=n-2;i>=0;i--){
+maxRightHeight[i]= Math.max(maxRightHeight[i+1],elevationMap[i]);
+}
+
+//calculate water at each index
+
 
 }
 
