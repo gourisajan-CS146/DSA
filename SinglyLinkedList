@@ -98,6 +98,10 @@ else {
 } 
 
 //Delete one of the nodes (by passing the node reference)
+head =list.listDelete( head, new Node(30));
+
+//Print the list again to show the change
+System.out.println("The new list  after deletion :  "  + list.printList(head);
 
 } //end of class
 
