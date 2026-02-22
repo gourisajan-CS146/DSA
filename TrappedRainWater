@@ -1,0 +1,15 @@
+public class TrappedRainWater{
+public static void main(){
+
+int[] elevationMap = {1, 2, 1, 4, 1, 2, 1, 5,0,0 2, 1, 5};
+int len = elevationMap.length;
+
+int[] maxLeftHeight = new int[len];
+int[] maxRightHeight = new int[len];
+
+maxLeftHeight[0]=elevationMap[0];
+
+}
+
+
+}
