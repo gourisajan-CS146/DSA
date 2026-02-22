@@ -1,43 +1,37 @@
 public class TrappedRainWater{
 public static void main(String args[]){
+    //this array is elevation map of height of walla
+    int[] elevationMap = {1, 2, 1, 4, 1, 2, 1, 5,0,0 ,2, 1, 5};
+    int len = elevationMap.length;
 
-int[] elevationMap = {1, 2, 1, 4, 1, 2, 1, 5,0,0 ,2, 1, 5};
-int len = elevationMap.length;
+    //store tall wall to left of index
+    int[] maxLeftHeight = new int[len];
+   //store tall wall to right of index
+    int[] maxRightHeight = new int[len];
 
-int[] maxLeftHeight = new int[len];
-int[] maxRightHeight = new int[len];
-
-maxLeftHeight[0]=elevationMap[0];
-for( int i=1;i<len;i++){
-maxLeftHeight[i]= Math.max(maxLeftHeight[i-1],elevationMap[i]);
-}
-
-
-maxRightHeight[len-1]=elevationMap[len-1];
-for( int i=len-2;i>=0;i--){
-maxRightHeight[i]= Math.max(maxRightHeight[i+1],elevationMap[i]);
-}
-
-
-
-//calculate water at each index
-int totalWaterFilled = 0;
-
-for(int i =0;i<len;i++){
- int waterAtEachLevel = Math.min(maxLeftHeight[i],maxRightHeight[i])-elevationMap[i];
-System.out.println("Water at level "+i+ " is :"+waterAtEachLevel);
-totalWaterFilled  =totalWaterFilled+waterAtEachLevel;
-}
-
-System.out.println("Amount of trapped rainwater here is "+totalWaterFilled);
-
-
-
-
-
-
+//no left side so tallest is itself
+    maxLeftHeight[0]=elevationMap[0];
+    for( int i=1;i<len;i++){// move from 1 till length
+         maxLeftHeight[i]= Math.max(maxLeftHeight[i-1],elevationMap[i]);//max of prvious max left heoight and current wall
+    }
+    
+    
+    maxRightHeight[len-1]=elevationMap[len-1];
+    for( int i=len-2;i>=0;i--){
+         maxRightHeight[i]= Math.max(maxRightHeight[i+1],elevationMap[i]);
+    }
+     
+    
+    //calculate water at each index
+    int totalWaterFilled = 0;  
+    for(int i =0;i<len;i++){
+     int waterAtEachLevel = Math.min(maxLeftHeight[i],maxRightHeight[i])-elevationMap[i];
+    System.out.println("Water at level "+i+ " is :"+waterAtEachLevel);
+    totalWaterFilled  =totalWaterFilled+waterAtEachLevel;
+    }
+    
+    System.out.println("Amount of trapped rainwater here is "+totalWaterFilled);
 
 }
-
 
 }
