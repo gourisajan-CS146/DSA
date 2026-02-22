@@ -1,4 +1,48 @@
 public class TrappedRainWater{
+public static void main(String args[]){
+
+int[] elevationMap = {1, 2, 1, 4, 1, 2, 1, 5,0,0 2, 1, 5};
+int len = elevationMap.length;
+
+int[] maxLeftHeight = new int[len];
+int[] maxRightHeight = new int[len];
+
+maxLeftHeight[0]=elevationMap[0];
+for( int i=1;i<len;i++){
+maxLeftHeight[i]= Math.max(maxLeftHeight[i-1],elevationMap[i]);
+}
+
+
+maxRightHeight[len-1]=elevationMap[len-1];
+for( int i=n-2;i>=0;i--){
+maxRightHeight[i]= Math.max(maxRightHeight[i+1],elevationMap[i]);
+}
+
+//calculate water at each index
+int totalWaterFilled = 0;
+for(int i =0;i<public class TrappedRainWater{
+public static void main(){
+
+int[] elevationMap = {1, 2, 1, 4, 1, 2, 1, 5,0,0 2, 1, 5};
+int len = elevationMap.length;
+
+int[] maxLeftHeight = new int[len];
+int[] maxRightHeight = new int[len];
+
+maxLeftHeight[0]=elevationMap[0];
+for( int i=1;i<n;i++){
+maxLeftHeight[i]= Math.max(maxLeftHeight[i-1],elevationMap[i]);
+}
+
+
+maxRightHeight[n-1]=elevationMap[n-1];
+for( int i=n-2;i>=0;i--){
+maxRightHeight[i]= Math.max(maxRightHeight[i+1],elevationMap[i]);
+}
+
+//calculate water at each index
+int totalWaterFilled = 0;
+for(int i =0;i<public class TrappedRainWater{
 public static void main(){
 
 int[] elevationMap = {1, 2, 1, 4, 1, 2, 1, 5,0,0 2, 1, 5};
@@ -21,6 +65,28 @@ maxRightHeight[i]= Math.max(maxRightHeight[i+1],elevationMap[i]);
 //calculate water at each index
 int totalWaterFilled = 0;
 for(int i =0;i<n;i++){
+ int waterAtEachLevel = Math.min(maxLeftHeight[i],maxRightHeight[i])-elevationMap[i];
+System.out.print("Water at level "+i+ " is :"+waterAtEachLevel);
+totalWaterFilled  =totalWaterFilled+waterAtEachLevel;
+}
+
+System.out.println("Amount of trapped rainwater here is "+totalWaterFilled);
+
+}
+
+
+};i++){
+ int waterAtEachLevel = Math.min(maxLeftHeight[i],maxRightHeight[i])-elevationMap[i];
+System.out.print("Water at level "+i+ " is :"+waterAtEachLevel);
+totalWaterFilled  =totalWaterFilled+waterAtEachLevel;
+}
+
+System.out.println("Amount of trapped rainwater here is "+totalWaterFilled);
+
+}
+
+
+};i++){
  int waterAtEachLevel = Math.min(maxLeftHeight[i],maxRightHeight[i])-elevationMap[i];
 System.out.print("Water at level "+i+ " is :"+waterAtEachLevel);
 totalWaterFilled  =totalWaterFilled+waterAtEachLevel;
