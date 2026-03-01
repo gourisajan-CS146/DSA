@@ -5,7 +5,7 @@ public class BSTSearch {
   
   public static List<Integer> bstSearchTrace(TreeNode root, Integer k) { 
     // check if tree /subtree is empty  ://base con
-    if ( root == null ) { 
+    if ( root == null || k== null) { 
       return  new ArrayList<Integer>();
     } 
   //an arraylist to hold only root
@@ -21,7 +21,7 @@ public class BSTSearch {
          subNodesList  = bstSearchTrace(root.left, k) ; //pass leftsubtree
     }
     else { 
-       subNodesList  = bstSearchTrace(root.right, k)//pass right subtree as root
+       subNodesList  = bstSearchTrace(root.right, k);//pass right subtree as root
     } 
     //merge root and subnodes
     rootList.addAll(subNodesList ); 
@@ -30,7 +30,7 @@ public class BSTSearch {
   
 // helper method which creates BST to test 
   public static TreeNode createBST(){
-    TreeNode rootNode = new rootNode(15);
+    TreeNode rootNode = new TreeNode(15);
     rootNode.left = new rootNode (6);
     rootNode.right = new rootNode (18);
 
@@ -49,7 +49,15 @@ public class BSTSearch {
     return rootNode; 
 
   } 
-  
+
+  public static voin main(String args[]){
+    TreeNode root  = createBST();
+    System.out.println(bstSearchTrace(root, 13));
+    System.out.println(bstSearchTrace(root, 14));
+    System.out.println(bstSearchTrace(root, 15));
+    System.out.println(bstSearchTrace(root, 2));
+    System.out.println(bstSearchTrace(root, 20));
+  }
 
 }
 
