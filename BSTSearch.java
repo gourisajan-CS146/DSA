@@ -31,20 +31,20 @@ public class BSTSearch {
 // helper method which creates BST to test 
   public static TreeNode createBST(){
     TreeNode rootNode = new TreeNode(15);
-    rootNode.left = new rootNode (6);
-    rootNode.right = new rootNode (18);
+    rootNode.left = new TreeNode (6);
+    rootNode.right = new TreeNode (18);
 
-    rootNode.left.left = new rootNode(3);
-    rootNode.left.right = new rootNode(7);
+    rootNode.left.left = new TreeNode(3);
+    rootNode.left.right = new TreeNode(7);
 
-    rootNode.left.left.left = new rootNode(2);
-    rootNode.left.left.right = new rootNode(4);
+    rootNode.left.left.left = new TreeNode(2);
+    rootNode.left.left.right = new TreeNode(4);
 
-    rootNode.left.right.right = new rootNode(13);
-    rootNode.left.right.right.left = new rootNode(9);
+    rootNode.left.right.right = new TreeNode(13);
+    rootNode.left.right.right.left = new TreeNode(9);
 
-    rootNode.right.left = new rootNode(17);
-    rootNode.right.right = new rootNode(20);
+    rootNode.right.left = new TreeNode(17);
+    rootNode.right.right = new TreeNode(20);
     
     return rootNode; 
 
