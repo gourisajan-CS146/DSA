@@ -25,16 +25,18 @@ for ( int i = 1; i < 26 ; i++){
 } 
 System.out.println("Cumulative count array: ");
 System.out.println(Arrays.toString(count));
-
+//create an array to put elements after sorting alphaber rray
 char[]sorted = new char[alphabetArr.length];
-
+//loop from last to first element
 for( int i = alphabetArr.length-1; i >=0 ; i --){
+ //take each alphabet and convert to index
    int index =  alphabetArr[i]-'A'; 
-
+//use this as index to take element from cumulative array .use  that as index for sorted array to put element
  int pos =  count[index]-1 ; 
+ //place each element in that position
   sorted[pos] = alphabetArr[i]; 
-
-count[index]--;
+  //decrease count of that letter 
+  count[index]--;
  
 } 
   
