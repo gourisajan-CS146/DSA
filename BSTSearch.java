@@ -50,7 +50,7 @@ public class BSTSearch {
 
   } 
 
-  public static voin main(String args[]){
+  public static void main(String args[]){
     TreeNode root  = createBST();
     System.out.println(bstSearchTrace(root, 13));
     System.out.println(bstSearchTrace(root, 14));
