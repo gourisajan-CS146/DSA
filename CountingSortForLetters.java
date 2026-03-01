@@ -2,7 +2,7 @@ import java.util.Arrays;
 /**
   Implement Counting Sort specifically for uppercase letters A–Z.
   **/ 
-public class CountingSortetters{ 
+public class CountingSortForLetters{ 
  
   public static void main (String args[]){
          char[] alphabetArr = { 'A','A','Z','B','H','K','L','Z','W','X','P'} ;
