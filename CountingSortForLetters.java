@@ -10,6 +10,10 @@ public class CountingSortetters{
     } 
 
   }   
+System.out.println("The count array is " + Arrays.toString(count));
+
+// build the cumulative count array.
+
 
   
 } 
