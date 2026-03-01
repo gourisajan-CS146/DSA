@@ -37,6 +37,14 @@ public void testsearchforleftMostKey(){
     assertEquals(expList,actualList,"Trace to find root 2 is incorret " );
 } 
 
+    @Test 
+public void testsearchforRightMostKey(){
+    TreeNode root = BSTSearch.createBST();
+    List<Integers> expList = Arrays.asList(15,18,20);
+    List<Integer>   actualList = BSTSearch.bstSearchTrace(root, 20);
+    assertEquals(expList,actualList,"Trace to find root 20 is incorret " );
+} 
+
   
 
 
