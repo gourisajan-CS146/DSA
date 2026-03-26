@@ -9,6 +9,18 @@ public class PrimAlgorithm{
         }
     }
 
+ static class Node implements Comparable<Node> {
+        int vertex, cost;
+
+        Node(int vertex, int cost) {
+            this.vertex = vertex;
+            this.cost = cost;
+        }
+
+        public int compareTo(Node other) {
+            return this.cost - other.cost;
+        }
+    }
 
 static final int V = 9;//no of vertices 
   public static findMinimumWeightedEdge(int[] key,boolean[] inMST){
