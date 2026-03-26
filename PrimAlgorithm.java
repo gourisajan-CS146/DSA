@@ -21,7 +21,7 @@ public class PrimAlgorithm{
             return this.cost - other.cost;
         }
     }
-public static void executeAndPrintPrimMST(List<List<GraphEdge>> adjList, int startVertex, char[] labels) {
+public static  int[] executePrimMST(List<List<GraphEdge>> adjList, int startVertex, char[] labels) {
 
     int numberOfVertices = adjList.size();
 
@@ -76,19 +76,9 @@ public static void executeAndPrintPrimMST(List<List<GraphEdge>> adjList, int sta
             }
         }
     }
+ return parentOfVertex;
 
- // Step 6: Print MST
-    int totalWeight = 0;
-    System.out.println("Edges in MST:");
 
-    for (int i = 0; i < numberOfVertices; i++) {
-        if (parentOfVertex[i] != -1) {
-            System.out.println(labels[parentOfVertex[i]] + " - " + labels[i] + " : " + minCostToConnect[i]);
-            totalWeight += minCostToConnect[i];
-        }
-    }
-
-    System.out.println("Total Weight = " + totalWeight);
 
 
     } 
