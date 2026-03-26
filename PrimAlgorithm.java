@@ -88,6 +88,19 @@ public static void addEdge(List<List<GraphEdge>> adjList, int fromVertex, int de
     // Since graph is undirected, also add reverse edge
     adjList.get(destVertex).add(new GraphEdge(fromVertex, weight));
 }
+  public static void printMST(int[] parentOfVertex, int[] minCostToConnect, char[] labels) {
+        int totalWeight = 0;
+        System.out.println("Edges in MST:");
+
+        for (int i = 0; i < parentOfVertex.length; i++) {
+            if (parentOfVertex[i] != -1) {
+                System.out.println(labels[parentOfVertex[i]] + " - " + labels[i] + " : " + minCostToConnect[i]);
+                totalWeight += minCostToConnect[i];
+            }
+        }
+
+        System.out.println("Total Weight = " + totalWeight);
+    }
 public static void main(String[] args) {
 
     int numberOfVertices = 9;
@@ -98,9 +111,13 @@ public static void main(String[] args) {
     
    // Create sample graph
     List<List<GraphEdge>> adjacencyList = createSampleGraph(numberOfVertices);
+  // Run Prim's Algorithm starting from vertex 0 (a)
+    int[] parentOfVertex = executePrimMST(adjacencyList, 0, minCostToConnect);
 
-    // Run Prim's Algorithm starting from vertex 0 (a)
-    executeAndPrintPrimMST(adjacencyList, 0, graphLabels);
+     printMST(parentOfVertex, minCostToConnect, graphLabels);
+
+   
+    
 }
   // Helper method to create and returns the sample graph
 public static List<List<GraphEdge>> createSampleGraph(int numberOfVertices) {
