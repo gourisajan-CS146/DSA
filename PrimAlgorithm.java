@@ -30,6 +30,19 @@ public static void primMST(List<List<Edge>> adjList, int startVertex, char[] lab
 
     //  which vertex added v into MST
     int[] parentOfVertex = new int[numberOfVertices];
+
+  // isInMST[v] = true if vertex v is already included in MST
+    boolean[] isInMST = new boolean[numberOfVertices];
+
+    // Step 1: Initialize all vertices
+  for (int i = 0; i < numberOfVertices; i++) {
+    minCostToConnect[i] = Integer.MAX_VALUE; // set all costs to infinity
+    parentOfVertex[i] = -1;                  // no parent initially
+    isInMST[i] = false;                     // not included in MST yet
+}
+
+
+  
 }
 static final int V = 9;//no of vertices 
   public static findMinimumWeightedEdge(int[] key,boolean[] inMST){
