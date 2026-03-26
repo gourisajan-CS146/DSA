@@ -1,10 +1,10 @@
 public class PrimAlgorithm{
  static class GraphEdge {
-        int destVetex,;
+        int destVertex,;
        int weight;
 
-        GrapghEdge(int destVetex, int weight) {
-            this.destVetex = destVetex;
+        GrapghEdge(int destVertex, int weight) {
+            this.destVertex = destVertex;
             this.weight = weight;
         }
     }
@@ -21,7 +21,16 @@ public class PrimAlgorithm{
             return this.cost - other.cost;
         }
     }
+public static void primMST(List<List<Edge>> adjList, int startVertex, char[] labels) {
 
+    int numberOfVertices = adjList.size();
+
+    // array to store minimum cost to connect vertex v to MST
+    int[] minCostToConnect = new int[numberOfVertices];
+
+    //  which vertex added v into MST
+    int[] parentOfVertex = new int[numberOfVertices];
+}
 static final int V = 9;//no of vertices 
   public static findMinimumWeightedEdge(int[] key,boolean[] inMST){
     int min = Integer.MAX_VALUE;
