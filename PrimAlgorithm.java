@@ -21,12 +21,12 @@ public class PrimAlgorithm{
             return this.cost - other.cost;
         }
     }
-public static  int[] executePrimMST(List<List<GraphEdge>> adjList, int startVertex, char[] labels) {
+
+public static  int[] executePrimMST(List<List<GraphEdge>> adjList, int startVertex, int[] minCostToConnect) {
 
     int numberOfVertices = adjList.size();
 
-    // array to store minimum cost to connect vertex v to MST
-    int[] minCostToConnect = new int[numberOfVertices];
+     
 
     //  parentOfVertex[v] stores which vertex added v into MST
     int[] parentOfVertex = new int[numberOfVertices];
@@ -111,6 +111,7 @@ public static void main(String[] args) {
     
    // Create sample graph
     List<List<GraphEdge>> adjacencyList = createSampleGraph(numberOfVertices);
+ int[] minCostToConnect = new int[numberOfVertices];
   // Run Prim's Algorithm starting from vertex 0 (a)
     int[] parentOfVertex = executePrimMST(adjacencyList, 0, minCostToConnect);
 
