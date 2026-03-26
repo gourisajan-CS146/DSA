@@ -110,7 +110,7 @@ public static void main(String[] args) {
     char[] graphLabels = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'};
 
     
-    / Create sample graph
+   // Create sample graph
     List<List<GraphEdge>> adjacencyList = createSampleGraph(numberOfVertices);
 
     // Run Prim's Algorithm starting from vertex 0 (a)
