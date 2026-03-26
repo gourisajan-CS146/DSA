@@ -1,3 +1,4 @@
+import java.util.*;
 public class PrimAlgorithm{
  static class GraphEdge {
         int destVertex,;
@@ -42,7 +43,14 @@ public static void primMST(List<List<Edge>> adjList, int startVertex, char[] lab
 }
 
 
-  
+   // Step 2: Create a min-heap (priority queue)
+    // This helps us always pick the vertex with smallest cost
+    PriorityQueue<Node> minHeap = new PriorityQueue<>();
+
+    // Step 3: Start from given starting vertex
+    minCostToConnect[startVertex] = 0;
+    minHeap.add(new Node(startVertex, 0));
+
 }
 static final int V = 9;//no of vertices 
   public static findMinimumWeightedEdge(int[] key,boolean[] inMST){
