@@ -28,7 +28,7 @@ public static void executeAndPrintPrimMST(List<List<GraphEdge>> adjList, int sta
     // array to store minimum cost to connect vertex v to MST
     int[] minCostToConnect = new int[numberOfVertices];
 
-    //  which vertex added v into MST
+    //  parentOfVertex[v] stores which vertex added v into MST
     int[] parentOfVertex = new int[numberOfVertices];
 
   // isInMST[v] = true if vertex v is already included in MST
@@ -72,7 +72,7 @@ public static void executeAndPrintPrimMST(List<List<GraphEdge>> adjList, int sta
                 parentOfVertex[neighbor] = currentVertex; // update parent
 
                 // add to heap
-                minHeap.add(new Node(neighbor, weight));
+                minHeap.add(new Node(neighbor, minCostToConnect[neighbor] ));
             }
         }
     }
