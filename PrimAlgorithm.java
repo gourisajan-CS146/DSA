@@ -4,7 +4,7 @@ public class PrimAlgorithm{
         int destVertex,;
        int weight;
 
-        GrapghEdge(int destVertex, int weight) {
+        GraphEdge(int destVertex, int weight) {
             this.destVertex = destVertex;
             this.weight = weight;
         }
@@ -78,22 +78,31 @@ public static void primMST(List<List<Edge>> adjList, int startVertex, char[] lab
         }
     }
 
+ // Step 6: Print MST
+    int totalWeight = 0;
+    System.out.println("Edges in MST:");
+
+    for (int i = 0; i < numberOfVertices; i++) {
+        if (parent[i] != -1) {
+            System.out.println(labels[parent[i]] + " - " + labels[i] + " : " + key[i]);
+            totalWeight += key[i];
+        }
+    }
+
+    System.out.println("Total Weight = " + totalWeight);
 
 
     } 
+
+// Method to add an edge in an undirected graph
+public static void addEdge(List<List<GraphEdge>> adjList, int fromVertex, int destVertex, int weight) {
+
+    // Add edge from fromVertex to destVertex
+    adjList.get(fromVertex).add(new GraphEdge(destVertex, weight));
+
+    // Since graph is undirected, also add reverse edge
+    adjList.get(destVertex).add(new GraphEdge(fromVertex, weight));
 }
-static final int V = 9;//no of vertices 
-  public static findMinimumWeightedEdge(int[] key,boolean[] inMST){
-    int min = Integer.MAX_VALUE;
-    int minIndex = -1;
-    for (int i = 0; i < V; i++) {
-            if (!inMST[i] && key[i] < min) {
-                min = key[i];
-                minIndex = i;
-            }
-        }
-        return minIndex;
-  }
 
   
 }
