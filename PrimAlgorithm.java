@@ -77,10 +77,6 @@ public static  int[] executePrimMST(List<List<GraphEdge>> adjList, int startVert
         }
     }
  return parentOfVertex;
-
-
-
-
     } 
 
 // Method to add an edge in an undirected graph
